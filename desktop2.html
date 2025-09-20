@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,31 +8,36 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
 
     <header class="header">
         <div class="container">
             <div class="header-content">
- 
-                <div class="header-left-side" style="display: flex; align-items: center; gap: 40px;">
- 
+                <div class="header-left-side">
                     <div class="logo">
                         <img src="https://i.postimg.cc/cCN5wvm1/logo-ny-1.png">
-                            <div class="logo-text">
-                                <span>Днепр, переулок Каштановый 11</span>
-                            </div>
-                        </a>
+                        <div class="logo-text">
+                            <span>Днепр, переулок Каштановый 11</span>
+                        </div>
                     </div>
- 
                     <nav class="navigation">
-                        <a href="#" class="nav-link active">Каталог</a>
+                        <a href="desktop2.html" class="nav-link active">Главная</a>
+                        <a href="catalog2.html" target="_blank" class="nav-link">Каталог</a>
                         <a href="#" class="nav-link">Отзывы</a>
                     </nav>
-                     
                 </div>
-                <div class="lang-switcher">
-                    <a href="desktop1.html" class="lang-link">UA</a>
-                    <a href="desktop2.html" class="lang-link active">RU</a>
+                <div class="header-right-side">
+                    <div class="lang-switcher">
+                        <a href="desktop1.html" class="lang-link">UA</a>
+                        <a href="desktop2.html" class="lang-link active">RU</a>
+                    </div>
+                    <div class="cart">
+                        <a href="#" class="cart-link">
+                            <i class="fas fa-shopping-cart" style="font-size: 24px;"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -41,14 +47,13 @@
         <div class="container">
             <section class="promo-section">
                 <div class="promo-banner">
-
                     <div class="promo-image">
-                        <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/Nj5L2Dj4/image-1.png' border='0' alt='image-1'/></a>
+                        <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/Nj5L2Dj4/image-1.png' border='0' alt='image-1' /></a>
                     </div>
                 </div>
                 <div class="intro-text">
-                    <p>Найдёте всё, что нужно для сборки или апгрейда вашего ПК. У нас широкий выбор комплектующих: от мощных процессоров и видеокарт до надёжных материнских плат и оперативной памяти.</p>
-                    <p>Каждый компонент в нашем каталоге — это гарантия производительности и долговечности. Мы работаем только с проверенными брендами, чтобы вы могли быть уверены в качестве каждой детали.</p>
+                    <p>Найдите все, что нужно для сборки или апгрейда вашего ПК. У нас широкий выбор комплектующих: от мощных процессоров и видеокарт до надежных материнских плат и оперативной памяти.</p>
+                    <p>Каждый компонент в нашем каталоге – это гарантия производительности и долговечности. Мы работаем только с проверенными брендами, чтобы вы могли быть уверены в качестве каждой детали.</p>
                     <h3>Почему выбирают нас?</h3>
                     <ul>
                         <li><strong>Широкий ассортимент:</strong> Большой выбор комплектующих для любых задач и бюджетов.</li>
@@ -71,12 +76,12 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        
                     </div>
                     <div class="price">
-                        <span class="old-price">9999₴</span>
-                        <span class="new-price">8999₴</span>
+                        <span class="old-price">20 200₽</span>
+                        <span class="new-price">18 180₽</span>
                     </div>
+                    <button class="buy-button">Купить</button>
                 </div>
                 <div class="product-card">
                     <div class="product-image-placeholder">
@@ -91,26 +96,27 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <div class="price">
-                        <span class="old-price">60000₴</span>
-                        <span class="new-price">53999₴</span>
+                        <span class="old-price">121 220₽</span>
+                        <span class="new-price">109 100₽</span>
                     </div>
+                    <button class="buy-button">Купить</button>
                 </div>
                 <div class="product-card">
                     <div class="product-image-placeholder">
                         <img src="https://i.postimg.cc/sDsdQgwD/92001b67-1681-11ef-8f93-001b21ea407b-1400x1400.webp">
                     </div>
-                    <h3>Процессор AMD Ryzen 7 7700X3D</h3>
+                    <h3>Процессор AMD Ryzen 7 7700</h3>
                     <div class="rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        
                     </div>
                     <div class="price">
-                        <span class="old-price">10999₴</span>
-                        <span class="new-price">9999₴</span>
+                        <span class="old-price">22 222₽</span>
+                        <span class="new-price">20 200₽</span>
                     </div>
+                    <button class="buy-button">Купить</button>
                 </div>
             </section>
         </div>
@@ -118,9 +124,9 @@
 
     <footer class="footer">
         <div class="container footer-content">
-             <div class="logo">
-                    <img src="https://i.postimg.cc/cCN5wvm1/logo-ny-1.png" alt="COMPX Logo">
-                </div>
+            <div class="logo">
+                <img src="https://i.postimg.cc/cCN5wvm1/logo-ny-1.png" alt="COMPX Logo">
+            </div>
             <div class="social-media">
                 <span>Подписывайтесь на социальные сети</span>
                 <a href="#"><i class="fab fa-instagram"></i></a>
@@ -134,4 +140,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
