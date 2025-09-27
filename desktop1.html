@@ -24,7 +24,7 @@
                     <nav class="navigation">
                         <a href="desktop1.html" class="nav-link active">Головна</a>
                         <a href="catalog1.html" target="_blank" class="nav-link">Каталог</a>
-                        <a href="#" class="nav-link">Відгуки</a>
+                        <a href="reviews_ua.html" class="nav-link">Відгуки</a>
                     </nav>
                 </div>
                 <div class="header-right-side">
@@ -66,9 +66,10 @@
             </section>
 
             <section class="products-section">
+                
                 <div class="product-card">
                     <div class="product-image-placeholder">
-                        <img src="https://i.postimg.cc/zDHk1wr9/11771bbb-0461-11ed-8f49-001b21ea407b-1400x1400.webp" data-name="Материнська плата ASUS TUF Gaming B550M-PLUS WIFI II" data-price="8999" data-image="https://i.postimg.cc/zDHk1wr9/11771bbb-0461-11ed-8f49-001b21ea407b-1400x1400.webp">
+                        <img src="https://i.postimg.cc/zDHk1wr9/11771bbb-0461-11ed-8f49-001b21ea407b-1400x1400.webp" alt="Материнська плата">
                     </div>
                     <h3>Материнська плата ASUS TUF Gaming B550M-PLUS WIFI II</h3>
                     <div class="rating">
@@ -81,11 +82,18 @@
                         <span class="old-price">9999₴</span>
                         <span class="new-price">8999₴</span>
                     </div>
-                    <button class="buy-button">Купити</button>
+                    <button class="buy-button"
+                            data-id="B550M-PLUS" 
+                            data-name="Материнська плата ASUS TUF Gaming B550M-PLUS WIFI II" 
+                            data-price="8999" 
+                            data-image="https://i.postimg.cc/zDHk1wr9/11771bbb-0461-11ed-8f49-001b21ea407b-1400x1400.webp">
+                        Купити
+                    </button>
                 </div>
+
                 <div class="product-card">
                     <div class="product-image-placeholder">
-                        <img src="https://i.postimg.cc/TPq3b4gZ/8635482d-df1f-11ef-8f9a-001b21ea407b-1400x1400.webp" data-name="Відеокарта Gigabyte RTX 5080 16GB GAMING OC" data-price="53999" data-image="https://i.postimg.cc/TPq3b4gZ/8635482d-df1f-11ef-8f9a-001b21ea407b-1400x1400.webp">
+                        <img src="https://i.postimg.cc/TPq3b4gZ/8635482d-df1f-11ef-8f9a-001b21ea407b-1400x1400.webp" alt="Відеокарта">
                     </div>
                     <h3>Відеокарта Gigabyte RTX 5080 16GB GAMING OC</h3>
                     <div class="rating">
@@ -99,11 +107,18 @@
                         <span class="old-price">60000₴</span>
                         <span class="new-price">53999₴</span>
                     </div>
-                    <button class="buy-button">Купити</button>
+                    <button class="buy-button"
+                            data-id="RTX-5080-OC" 
+                            data-name="Відеокарта Gigabyte RTX 5080 16GB GAMING OC" 
+                            data-price="53999" 
+                            data-image="https://i.postimg.cc/TPq3b4gZ/8635482d-df1f-11ef-8f9a-001b21ea407b-1400x1400.webp">
+                        Купити
+                    </button>
                 </div>
+
                 <div class="product-card">
                     <div class="product-image-placeholder">
-                        <img src="https://i.postimg.cc/sDsdQgwD/92001b67-1681-11ef-8f93-001b21ea407b-1400x1400.webp" data-name="Процесор AMD Ryzen 7 7700" data-price="9999" data-image="https://i.postimg.cc/sDsdQgwD/92001b67-1681-11ef-8f93-001b21ea407b-1400x1400.webp">
+                        <img src="https://i.postimg.cc/sDsdQgwD/92001b67-1681-11ef-8f93-001b21ea407b-1400x1400.webp" alt="Процесор">
                     </div>
                     <h3>Процесор AMD Ryzen 7 7700</h3>
                     <div class="rating">
@@ -116,7 +131,13 @@
                         <span class="old-price">10999₴</span>
                         <span class="new-price">9999₴</span>
                     </div>
-                    <button class="buy-button">Купити</button>
+                    <button class="buy-button"
+                            data-id="Ryzen-7-7700" 
+                            data-name="Процесор AMD Ryzen 7 7700" 
+                            data-price="9999" 
+                            data-image="https://i.postimg.cc/sDsdQgwD/92001b67-1681-11ef-8f93-001b21ea407b-1400x1400.webp">
+                        Купити
+                    </button>
                 </div>
             </section>
         </div>
@@ -143,8 +164,9 @@
             <span class="close-button">&times;</span>
             <h2>Кошик</h2>
             <div id="cart-items">
-                </div>
+            </div>
             <p>Загальна сума: <span id="cart-total">0</span>₴</p>
+            <button class="checkout-button">Оформити замовлення</button>
         </div>
     </div>
 
