@@ -23,7 +23,7 @@ body {
     padding: 0 20px;
 }
 
-/* Header */
+
 .header {
     background-color: #2e2e48;
     padding: 15px 0;
@@ -91,7 +91,7 @@ body {
     font-weight: 700;
 }
 
-/* Main Content */
+
 .main-content {
     padding: 40px 0;
 }
@@ -169,7 +169,7 @@ body {
     margin-bottom: 10px;
 }
 
-/* Products Section */
+
 .products-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -225,7 +225,7 @@ body {
     color: var(--primary-color);
 }
 
-/* Footer */
+
 .footer {
     background-color: #2e2e48;
     padding: 20px 0;
@@ -266,7 +266,7 @@ body {
     color: var(--primary-color);
 }
 
-/* Для іконок соцмереж */
+
 .fa-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-size: 28px;}
 .fa-telegram-plane { color: #0088cc; }
 .fa-tiktok { color: #fff; }
@@ -278,7 +278,7 @@ body {
     transition: transform 0.2s;
 }
 
-/* Вставлені стилі для елементів кошика та кнопок "Купити" */
+
 .header-right-side {
     display: flex;
     align-items: center;
@@ -293,7 +293,7 @@ body {
 }
 
 .cart-link:hover {
-    color: #e6a800; /* Жовтий колір при наведенні */
+    color: #e6a800;
 }
 
 .cart-link .cart-count {
@@ -305,7 +305,7 @@ body {
     position: absolute;
     top: -10px;
     right: -10px;
-    display: none; /* Спочатку прихований */
+    display: none;
 }
 
 .buy-button {
@@ -325,18 +325,18 @@ body {
     background-color: #0056b3;
 }
 
-/* Модальне вікно (popup) */
+
 .modal {
-    display: none; /* Приховано за замовчуванням */
-    position: fixed; /* Залишається на місці */
-    z-index: 1000; /* Перекриває інші елементи */
+    display: none;
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Дозволяє скролінг */
-    background-color: rgba(0, 0, 0, 0.6); /* Напівпрозорий чорний фон */
-    backdrop-filter: blur(5px); /* Розмиття фону */
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
 }
 
 .modal-content {
@@ -407,17 +407,15 @@ body {
     color: #ccc;
 }
 
-/* --- Стили для страницы Отзывов (Reviews/Відгуки) --- */
+
 
 .reviews-section {
     padding: 40px 0;
 }
 
 .review-card {
-    /* Фон карточки отзыва */
     background-color: #2e2e48;
-    /* Яркая синяя полоса слева */
-    border-left: 5px solid var(--primary-color); /* Используем переменную для акцента */
+    border-left: 5px solid var(--primary-color);
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
@@ -457,7 +455,6 @@ body {
     color: #888;
 }
 
-/* --- Стили для Формы Отзыва --- */
 
 .review-form-container {
     background-color: #2e2e48;
@@ -516,7 +513,6 @@ body {
     background-color: #c4324a;
 }
 
-/* --- Мобильная адаптивность --- */
 @media (max-width: 768px) {
     .header-left-side {
         flex-direction: column;
@@ -565,7 +561,7 @@ body {
     }
     
     .promo-image {
-        display: none; /* Скрываем большое изображение на мобильных */
+        display: none;
     }
 
     .footer-content {
@@ -593,7 +589,6 @@ body {
     }
 }
 
-/* --- Корректировка стилей Модального окна Корзины (улучшение существующих) --- */
 .modal-content h2 {
     color: var(--text-color);
     border-bottom: 2px solid var(--primary-color);
@@ -628,4 +623,166 @@ body {
 
 .checkout-button:hover {
     background-color: #c4324a;
+}
+
+#checkout-form-container {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid #ddd;
+}
+
+#checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#checkout-form input[type="text"],
+#checkout-form input[type="tel"],
+#checkout-form input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#checkout-form input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.submit-order-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.submit-order-button:hover {
+    background-color: #1e7e34;
+}
+
+.buy-button {
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+    background-color: #0056b3;
+}
+
+.reviews-section {
+    padding: 20px 0;
+}
+
+.review-card {
+    background-color: #333; 
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-left: 5px solid #007bff;
+}
+
+.review-card h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-card .rating {
+    color: #ffc107; 
+    font-size: 1.1em;
+}
+
+.review-card .date {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.85em;
+    color: #aaa;
+    text-align: right;
+}
+
+.review-form-container {
+    background-color: #444;
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+.review-form-container h3 {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+#add-review-form label {
+    display: block;
+    color: #fff;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#add-review-form input[type="text"],
+#add-review-form textarea,
+#add-review-form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #666;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #555;
+    color: #fff;
+}
+
+#add-review-form textarea {
+    resize: vertical;
+}
+
+#add-review-form input[type="number"] {
+    width: 100px;
+    text-align: center;
+}
+
+#add-review-form button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.05em;
+    transition: background-color 0.3s;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#add-review-form button[type="submit"]:hover {
+    background-color: #1e7e34;
 }
