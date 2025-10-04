@@ -66,7 +66,6 @@
             </section>
 
             <section class="products-section">
-                
                 <div class="product-card">
                     <div class="product-image-placeholder">
                         <img src="https://i.postimg.cc/zDHk1wr9/11771bbb-0461-11ed-8f49-001b21ea407b-1400x1400.webp" alt="Материнська плата">
@@ -161,18 +160,30 @@
 
     <div id="cart-modal" class="modal">
         <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Кошик</h2>
-            <div id="cart-items">
-            </div>
-            <p>Загальна сума: <span id="cart-total">0</span>₴</p>
-            <button class="checkout-button">Оформити замовлення</button>
+    <span class="close-button">&times;</span>
+    <h2>Кошик</h2>
+    <div id="cart-items">
         </div>
+    <p>Загальна сума: <span id="cart-total">0</span>₴</p>
+    
+    <div id="checkout-form-container" style="display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee;">
+        <h3>Контактні дані</h3>
+        <form id="checkout-form">
+            <input type="text" id="user-name" placeholder="Ваше ім'я" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            <input type="tel" id="user-phone" placeholder="Номер телефону" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            <input type="email" id="user-email" placeholder="Email (не обов'язково)" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            
+            <button type="submit" class="submit-order-button" style="width: 100%; padding: 15px; background-color: #28a745; color: white; border: none; border-radius: 4px; font-size: 1.1em; cursor: pointer;">
+                Підтвердити замовлення
+            </button>
+        </form>
+    </div>
+    
+    <button class="checkout-button">Оформити замовлення</button>
+</div>
     </div>
 
     <script src="script.js"></script>
 </body>
 
 </html>
-
-
