@@ -29,7 +29,7 @@
                 </div>
                 <div class="header-right-side">
                     <div class="lang-switcher">
-                        <a href="index.html" class="lang-link">UA</a>
+                        <a href="desktop1.html" class="lang-link">UA</a>
                         <a href="desktop2.html" class="lang-link active">RU</a>
                     </div>
                     <div class="cart">
@@ -164,7 +164,22 @@
             <h2>Корзина</h2>
             <div id="cart-items">
             </div>
-            <p>Общая сумма: <span id="cart-total">0₽</span></p>
+            
+            <p>Общая сумма: <span id="cart-total">0</span></p> 
+            
+            <div id="checkout-form-container" style="display: none;">
+                <h3>Контактные данные</h3>
+                <form id="checkout-form">
+                    <input type="text" id="user-name" placeholder="Ваше имя" required>
+                    <input type="tel" id="user-phone" placeholder="Номер телефона" required>
+                    <input type="email" id="user-email" placeholder="Email (необязательно)">
+                    
+                    <button type="submit" class="submit-order-button">
+                        Подтвердить заказ
+                    </button>
+                </form>
+            </div>
+            
             <button class="checkout-button">Оформить заказ</button>
         </div>
     </div>
@@ -173,5 +188,3 @@
 </body>
 
 </html>
-
-
