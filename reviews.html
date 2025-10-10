@@ -48,16 +48,8 @@
             <section class="reviews-section">
                 <h2 style="color: #fff; text-align: center; margin-bottom: 40px;">Отзывы наших клиентов</h2>
 
-                <div class="review-card">
-                    <h4>Александр К. <span class="rating">★★★★★</span></h4>
-                    <p>Заказал новую видеокарту RTX 5080. Доставили очень быстро, упаковано надежно. Карта работает отлично, никаких нареканий. Рекомендую этот магазин!</p>
-                    <span class="date">15.09.2025</span>
-                </div>
 
-                <div class="review-card">
-                    <h4>Ирина В. <span class="rating">★★★★</span></h4>
-                    <p>Покупала материнскую плату. Консультант помог выбрать подходящую модель. Единственный минус — курьер опоздал на 30 минут. В целом, довольна.</p>
-                    <span class="date">10.09.2025</span>
+                <div id="all-reviews">
                 </div>
 
                 <div class="review-form-container">
@@ -68,14 +60,15 @@
 
                         <label for="review-text">Отзыв:</label>
                         <textarea id="review-text" name="text" rows="5" required></textarea>
-                        
+
                         <label for="review-rating">Ваша оценка (1-5):</label>
-                        <input type="number" id="review-rating" name="rating" min="1" max="5" value="5" required style="width: 100px;">
+                        <input type="number" id="review-rating" name="rating" min="1" max="5" value="5" required
+                            style="width: 100px;">
 
                         <button type="submit">Отправить отзыв</button>
                     </form>
                 </div>
-                
+
             </section>
         </div>
     </main>
@@ -100,8 +93,24 @@
         <div class="modal-content">
             <span class="close-button">&times;</span>
             <h2>Корзина</h2>
-            <div id="cart-items"></div>
-            <p>Общая сумма: <span id="cart-total">0₽</span></p>
+            <div id="cart-items">
+            </div>
+
+            <p>Общая сумма: <span id="cart-total">0</span>₽</p>
+
+            <div id="checkout-form-container" style="display: none;">
+                <h3>Контактные данные</h3>
+                <form id="checkout-form">
+                    <input type="text" id="user-name" placeholder="Ваше имя" required>
+                    <input type="tel" id="user-phone" placeholder="Номер телефона" required>
+                    <input type="email" id="user-email" placeholder="Email (необязательно)">
+
+                    <button type="submit" class="submit-order-button">
+                        Подтвердить заказ
+                    </button>
+                </form>
+            </div>
+
             <button class="checkout-button">Оформить заказ</button>
         </div>
     </div>
