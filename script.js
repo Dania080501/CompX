@@ -1,5 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    const carouselInner = document.querySelector('.carousel-inner');
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    
+if (carouselInner && carouselItems.length > 0) {
+    const totalItems = carouselItems.length;
+    let currentIndex = 0;
+
+    function updateCarousel() {
+    const offset = -currentIndex * 100; 
+    carouselInner.style.transform = `translateX(${offset}%)`;
+}
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalItems; 
+        updateCarousel();
+    }
+
+    setInterval(nextSlide, 3000);
+}
+
+
     const buyButtons = document.querySelectorAll('.buy-button');
     const cartCountSpan = document.querySelector('.cart-count');
     const cartModal = document.getElementById('cart-modal');
@@ -7,36 +28,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartLink = document.getElementById('cart-link');
     const cartItemsContainer = document.getElementById('cart-items');
     const cartTotalSpan = document.getElementById('cart-total');
-    const checkoutButton = document.querySelector('.checkout-button'); 
-    
-    const checkoutFormContainer = document.getElementById('checkout-form-container'); 
-    const checkoutForm = document.getElementById('checkout-form'); 
+    const checkoutButton = document.querySelector('.checkout-button');
+
+    const checkoutFormContainer = document.getElementById('checkout-form-container');
+    const checkoutForm = document.getElementById('checkout-form');
 
     const isRussian = document.documentElement.lang === 'ru';
-    const currencySymbol = isRussian ? '₽' : '₴'; 
+    const currencySymbol = isRussian ? '₽' : '₴';
     const quantityText = isRussian ? 'Количество' : 'Кількість';
     const sumText = isRussian ? 'Сумма' : 'Сума';
     const emptyMessageText = isRussian ? 'Корзина пуста. Время что-нибудь приобрести!' : 'Кошик порожній. Час щось придбати!';
     const buyButtonText = isRussian ? 'Купить' : 'Купити';
     const addedButtonText = isRussian ? 'Добавлено!' : 'Додано!';
-    const checkoutAlertText = isRussian ? 
-        'Заказ оформлен! Мы свяжемся с вами в ближайшее время.' : 
+    const checkoutAlertText = isRussian ?
+        'Заказ оформлен! Мы свяжемся с вами в ближайшее время.' :
         'Замовлення оформлено! Ми зв\'яжемося з вами найближчим часом.';
     const formHeaderText = isRussian ? 'Контактные данные' : 'Контактні дані';
     const namePlaceholder = isRussian ? "Ваше имя" : "Ваше ім'я";
     const phonePlaceholder = isRussian ? "Номер телефона" : "Номер телефону";
     const emailPlaceholder = isRussian ? "Email (необязательно)" : "Email (не обов'язково)";
     const submitButtonText = isRussian ? 'Подтвердить заказ' : 'Підтвердити замовлення';
-    
+
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     function updateCartCount() {
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
         cartCountSpan.textContent = totalItems;
         cartCountSpan.style.display = totalItems > 0 ? 'block' : 'none';
-        
+
         if (checkoutFormContainer) {
-            checkoutFormContainer.style.display = 'none'; 
+            checkoutFormContainer.style.display = 'none';
         }
     }
 
@@ -47,18 +68,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         return total.toFixed(0);
     }
-    
+
     function removeItem(itemId) {
         cart = cart.filter(item => item.id !== itemId);
-        
+
         localStorage.setItem('cart', JSON.stringify(cart));
         updateCartCount();
-        renderCartItems(); 
+        renderCartItems();
     }
 
     function renderCartItems() {
         cartItemsContainer.innerHTML = '';
-        
+
         if (cart.length === 0) {
             cartItemsContainer.innerHTML = `<p style="text-align: center; color: #ccc;">${emptyMessageText}</p>`;
             if (checkoutButton) {
@@ -77,11 +98,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     checkoutButton.style.display = 'block';
                 }
             }
-            
+
             cart.forEach(item => {
                 const itemDiv = document.createElement('div');
                 itemDiv.className = 'cart-item';
-                
+
                 const itemTotal = (item.price * item.quantity).toFixed(0);
 
                 itemDiv.innerHTML = `
@@ -97,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
                 cartItemsContainer.appendChild(itemDiv);
             });
-            
+
             document.querySelectorAll('.remove-item-btn').forEach(button => {
                 button.addEventListener('click', (event) => {
                     const itemId = event.currentTarget.dataset.id;
@@ -115,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         cartTotalSpan.textContent = `${calculateTotal()}${currencySymbol}`;
     }
-    
+
     buyButtons.forEach(button => {
         button.addEventListener('click', () => {
             const productId = button.dataset.id;
@@ -127,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Ошибка: Не найден data-id или data-price на кнопке.', button);
                 return;
             }
-            
+
             const existingItem = cart.find(item => item.id === productId);
 
             if (existingItem) {
@@ -145,12 +166,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             localStorage.setItem('cart', JSON.stringify(cart));
             updateCartCount();
-            
+
             button.textContent = addedButtonText;
-            button.style.backgroundColor = '#28a745'; 
+            button.style.backgroundColor = '#28a745';
             setTimeout(() => {
                 button.textContent = buyButtonText;
-                button.style.backgroundColor = '#007bff'; 
+                button.style.backgroundColor = '#007bff';
             }, 1000);
         });
     });
@@ -170,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cartModal.style.display = 'none';
         }
     });
-    
+
     if (checkoutButton && checkoutFormContainer) {
         checkoutButton.addEventListener('click', () => {
             if (cart.length > 0) {
@@ -183,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (checkoutForm) {
         checkoutForm.addEventListener('submit', (event) => {
             event.preventDefault();
-            
+
             const name = document.getElementById('user-name').value;
             const phone = document.getElementById('user-phone').value;
             const email = document.getElementById('user-email').value;
@@ -194,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 quantity: item.quantity,
                 price: item.price
             }));
-            
+
             const orderData = {
                 customer: { name, phone, email },
                 totalAmount: `${total}${currencySymbol}`,
@@ -205,15 +226,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             cart = [];
             localStorage.setItem('cart', JSON.stringify(cart));
-            
+
             updateCartCount();
-            
+
             checkoutForm.reset();
             checkoutFormContainer.style.display = 'none';
             checkoutButton.style.display = 'block';
 
             alert(checkoutAlertText);
-            
+
             cartModal.style.display = 'none';
         });
     }
@@ -222,8 +243,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const reviewForm = document.getElementById('add-review-form');
     const reviewsContainer = document.getElementById('all-reviews');
-    
-    if (reviewForm && reviewsContainer) { 
+
+    if (reviewForm && reviewsContainer) {
 
         const initialReviews = [
             {
@@ -248,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('productReviews', JSON.stringify(initialReviews));
             return initialReviews;
         }
-        
+
         function saveReviews(reviews) {
             localStorage.setItem('productReviews', JSON.stringify(reviews));
         }
@@ -262,11 +283,11 @@ document.addEventListener('DOMContentLoaded', () => {
         function renderReviews() {
             reviewsContainer.innerHTML = '';
             const reviews = getReviews();
-            
+
             reviews.forEach(review => {
                 const reviewCard = document.createElement('div');
                 reviewCard.className = 'review-card';
-                
+
                 reviewCard.innerHTML = `
                     <h4>
                         ${review.name} 
@@ -285,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const name = document.getElementById('review-name').value;
             const text = document.getElementById('review-text').value;
             const rating = parseInt(document.getElementById('review-rating').value, 10);
-            
+
             if (rating < 1 || rating > 5) {
                 alert("Будь ласка, оберіть оцінку від 1 до 5.");
                 return;
@@ -302,15 +323,15 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             const currentReviews = getReviews();
-            currentReviews.unshift(newReview); 
-            
+            currentReviews.unshift(newReview);
+
             saveReviews(currentReviews);
-            renderReviews(); 
+            renderReviews();
 
             reviewForm.reset();
             alert("Дякуємо! Ваш відгук успішно додано.");
         });
-        
+
         renderReviews();
     }
 });
