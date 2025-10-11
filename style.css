@@ -94,57 +94,49 @@ body {
     padding: 40px 0;
 }
 
-/* --- ОНОВЛЕНІ СТИЛІ ДЛЯ СЛАЙДЕРА --- */
-
 .promo-section {
-    display: flex; /* Розміщує слайдер і текст поруч */
+    display: flex;
     justify-content: space-between;
     gap: 40px;
     margin-bottom: 40px;
 }
 
 .promo-banner-carousel {
-    width: 40%; /* Слайдер займає 40% ширини */
-    height: 350px; /* Фіксована висота для каруселі */
+    width: 40%;
+    height: 350px;
     border-radius: 10px;
-    overflow: hidden; /* КЛЮЧ: приховує всі слайди, крім активного */
+    overflow: hidden;
     position: relative; 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* Контейнер, який рухається, містить усі слайди */
+
 .carousel-inner {
     display: flex;
     width: 300%; /* 100% * 3 слайди */
     height: 100%;
-    transition: transform 0.5s ease-in-out; /* Плавний перехід */
+    transition: transform 0.5s ease-in-out;
 }
 
-/* Кожен окремий банер */
 .carousel-item {
-    min-width: 33.333%; /* Кожен слайд займає 1/3 ширини */
+    min-width: 33.333%;
     height: 100%;
     position: relative;
 }
 
-/* Стилі для зображень у слайдері */
+
 .carousel-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Зображення заповнює контейнер */
+    object-fit: cover;
     display: block;
 }
 
-/* Старі стилі .promo-banner, .promo-banner::before, .promo-text, .promo-image ВИДАЛЕНІ */
-
-/* Оновлений .intro-text */
 .intro-text {
-    width: 55%; /* Текст займає 55% ширини */
+    width: 55%;
     font-size: 16px;
     line-height: 1.6;
 }
-
-/* ... Решта стилів intro-text ... */
 
 .intro-text h3 {
     margin-top: 20px;
@@ -696,18 +688,14 @@ body {
         gap: 20px;
     }
 
-    /* АДАПТИВНІСТЬ СЛАЙДЕРА */
     .promo-banner-carousel {
-        width: 100%; /* На мобільних займає всю ширину */
-        height: 200px; /* Зменшуємо висоту для мобільних */
+        width: 100%;
+        height: 200px;
     }
 
     .intro-text {
-        width: 100%; /* Текст займає всю ширину */
+        width: 100%;
     }
-
-    /* Старі стилі .promo-banner, .promo-image, .promo-text ВИДАЛЕНІ */
-    /* ... */
     
     .footer-content {
         flex-direction: column;
@@ -733,3 +721,4 @@ body {
         margin-top: 10px;
     }
 }
+
